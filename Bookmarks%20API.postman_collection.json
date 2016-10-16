@@ -1,0 +1,113 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Bookmarks API",
+		"_postman_id": "9354fa5a-afca-d78a-03d6-899a272529e8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://{{url}}/bookmarks last 10",
+			"request": {
+				"url": "http://{{url}}/api/bookmarks",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "last 10 bookmarks"
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{url}}/bookmarks create new bookmark",
+			"request": {
+				"url": "http://{{url}}/api/bookmarks",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"url\": \"http://google.com\"\r\n}"
+				},
+				"description": "create new bookmark"
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{url}}/bookmarks get by url",
+			"request": {
+				"url": "http://{{url}}/api/bookmarks/find?url=google.com",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "get bookmarks by url"
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{url}}/comments create new comments",
+			"request": {
+				"url": "http://{{url}}/api/comments",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"bookmark_uid\": \"1\",\r\n   \"text\": \"test\"\r\n}"
+				},
+				"description": "create new comment"
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{url}}/comments remove comment",
+			"request": {
+				"url": "http://{{url}}/api/comments/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "remove comment"
+			},
+			"response": []
+		},
+		{
+			"name": "http://{{url}}/comments edit comment",
+			"request": {
+				"url": "http://{{url}}/api/comments/3",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"max\"\n}"
+				},
+				"description": "edit comment"
+			},
+			"response": []
+		}
+	]
+}
